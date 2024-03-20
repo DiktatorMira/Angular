@@ -1,0 +1,20 @@
+<main class="main">
+    <h1>Go see the world!</h1>
+    <hr>
+    <div class="cont">
+        <div class="imgcont" *ngFor="let article of articles1">
+            <img [src]="article.src">
+            <h3>{{article.title}}</h3>
+            <p>{{article.text}}</p>
+        </div>
+    </div>
+    <h1>Deals & Destinations</h1>
+    <hr>
+    <div class="cont second">
+        <div class="imgcont" *ngFor="let article of articles2">
+            <img [src]="article.src">
+            <h3>{{article.title}}</h3>
+            <p>{{article.text}}</p>
+        </div>
+    </div>
+</main>
