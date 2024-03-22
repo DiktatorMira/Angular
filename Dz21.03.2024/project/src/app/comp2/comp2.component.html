@@ -1,0 +1,11 @@
+<div class="left">
+    <input *ngFor="let book of books" class="button" type="button" [value]="book.title" (click)="onSelectBook(book)">
+</div>
+<img class="image" [src]="selectedBook?.path">
+<div class="info">
+    <span>Название: {{ selectedBook?.title }}</span>
+    <span>Автор: {{ selectedBook?.author }}</span>
+    <span>Год издания: {{ selectedBook?.year }}</span>
+    <span>Цена: {{ selectedBook?.price }}</span>
+    <span>Рейтинг: {{ selectedBook?.rating }}</span>
+</div>

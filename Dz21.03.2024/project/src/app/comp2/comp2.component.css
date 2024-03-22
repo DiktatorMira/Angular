@@ -1,0 +1,48 @@
+.left{
+    height:45vh;
+    width:20%;
+    border:2px outset rgb(183, 183, 183);
+    border-radius:7px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.button{
+    height:5vh;
+    width:80%;
+    background:rgb(211, 211, 211);
+    border:3px outset rgb(183, 183, 183);
+    border-radius:7px;
+    font-size:1.1em;
+    outline:none;
+    transition:.15s;
+}
+.button:hover{box-shadow:2px 2px 7px gray;}
+.button:active{
+    border:3px ridge rgb(183, 183, 183);
+    transform:scale(0.97);
+}
+.image{
+    position:absolute;
+    top:1%;
+    left:21%;
+    height:210px;
+    width:210px;
+    background:cover;
+    border:2px outset rgb(183, 183, 183);
+    border-radius:7px;
+}
+.info{
+    position:absolute;
+    top:32%;
+    left:21%;
+    padding-left:.5%;
+    height:140px;
+    width:250px;
+    border:2px outset rgb(183, 183, 183);
+    border-radius:7px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}

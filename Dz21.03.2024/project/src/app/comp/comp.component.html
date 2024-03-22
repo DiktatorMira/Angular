@@ -1,0 +1,7 @@
+<input class="buttons" type="button" value="B" (click)="toggleBold()">
+<input class="buttons" type="button" value="I" (click)="toggleItalic()">
+<input class="buttons" type="button" value="U" (click)="toggleUnderline()">
+<input class="buttons" type="button" value="Tt" (click)="toggleCase()"><br>
+<textarea class="text" readonly="true" [ngClass]="{'bold': isBold, 'italic': isItalic, 'underline': isUnderline, 'case': isCase}">
+    The shimmering scales of the fish danced in the sunlight as they darted through the crystal-clear waters of the coral reef. Beneath the tranquil surface of the pond, the fish gracefully glided, their fins gently propelling them forward in a mesmerizing ballet of aquatic elegance. In the depths of the ocean, a colorful array of tropical fish swam amongst the vibrant coral, creating a breathtaking underwater panorama.
+</textarea>

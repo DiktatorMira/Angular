@@ -1,0 +1,27 @@
+.buttons {
+    margin-left: 1%;
+    height: 5vh;
+    width: 3%;
+    background: rgb(210, 210, 210);
+    border: none;
+    border-radius: 7px;
+    font-size: 1em;
+    outline: none;
+    transition: .15s;
+}
+.buttons:hover { background: rgb(189, 189, 189); }
+.buttons:active { transform: scale(0.95); }
+.text {
+    margin: 1% 0 0 1%;
+    height: 25vh;
+    width: 25%;
+    border: 2px solid gray;
+    border-radius: 7px;
+    font-size: 1.1em;
+    outline: none;
+    resize: none;
+}
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+.underline { text-decoration: underline; }
+.case {text-transform:uppercase;}
