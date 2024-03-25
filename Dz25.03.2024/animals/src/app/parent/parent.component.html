@@ -1,0 +1,4 @@
+<div id="app">
+    <div class="app-title">Pets</div>
+    <app-child *ngFor="let animal of petsData" [animal]="animal" [age]="calculateAge(animal.birthYear)"></app-child>
+</div>

@@ -1,0 +1,9 @@
+<div class="animal">
+    <img class="pet-photo" [src]="animal.photo">
+    <h2 class="pet-name">{{ animal.name }} <span class="species">({{ animal.species }})</span></h2>
+    <p><strong>Age: {{ age }}</strong></p> <!-- Используем переданный возраст -->
+    <h4>Favorite Foods</h4>
+    <ul class="foods-list">
+      <li *ngFor="let food of animal.favFoods" [innerHTML]="food"></li>
+    </ul>
+</div>
