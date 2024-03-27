@@ -7,6 +7,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class ChildComponent {
   @Input() product: any;
-  @Output() onChanged = new EventEmitter();
+  @Output() quantityChanged = new EventEmitter<number>();
   constructor() {}
+  incrementQuantity() {
+    this.quantityChanged.emit(1);
+  }
+  decrementQuantity() {
+    if (this.product.quantity > 0) this.quantityChanged.emit(-1);
+  }
 }

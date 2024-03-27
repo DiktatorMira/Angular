@@ -1,5 +1,5 @@
 <h2>{{product.name}}</h2>
 <p>{{product.price}}$</p>
-<button (click)="onChanged.emit(1)">+</button>
+<button (click)="incrementQuantity()">+</button>
 <p>{{product.quantity}}</p>
-<button (click)="onChanged.emit(-1)">-</button>
+<button (click)="decrementQuantity()">-</button>

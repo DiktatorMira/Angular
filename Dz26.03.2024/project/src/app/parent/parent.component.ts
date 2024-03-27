@@ -18,9 +18,11 @@ export class ParentComponent {
   getTotalPrices() {
     return this.products.reduce((total, product) => total + (product.price * product.quantity), 0);
   }
-  onChanged(event: boolean) {
-    console.log(event);
-    event == true ? this.clicks++ : this.clicks--;
-    this.totalPrices = this.getTotalPrices();
+  onChanged(product: any, delta: number) {
+    const index = this.products.findIndex(p => p === product);
+    if (index !== -1) {
+      this.products[index].quantity += delta;
+      this.totalPrices = this.getTotalPrices();
+    }
   }
 }
