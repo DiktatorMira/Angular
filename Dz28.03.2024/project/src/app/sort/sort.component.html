@@ -1,0 +1,12 @@
+<section class="buttns">
+    <input class="but" type="button" value="Вывод всех аудиторий" (click)="displayAllAuditoriums()">
+    <input class="but" type="button" value="Вывод аудиторий для указанного факультета" (click)="displayAuditoriumsByFaculty()">
+    <input class="but" type="button" value="Вывод аудиторий подходящих для указанной группы" (click)="displayAuditoriumsByGroup()">
+    <input class="but" type="button" value="Сортировка аудиторий по кол-ву мест" (click)="sortAuditoriumsBySeats()">
+    <input class="but" type="button" value="Сортировка аудиторий по алфавиту" (click)="sortAuditoriumsByName()">
+</section>
+<section class="table">
+    <div *ngFor="let auditorium of displayedAuditoriums">
+        <p>{{ auditorium.name }} - {{ auditorium.seats }} мест, {{ auditorium.faculty }}</p>
+    </div>
+</section>
