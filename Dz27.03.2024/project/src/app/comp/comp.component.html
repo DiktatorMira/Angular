@@ -1,0 +1,15 @@
+<section class="main">
+    <input class="inputs" type="text" placeholder="Имя пользователя" [(ngModel)]="userName">
+    <input class="inputs" type="number" placeholder="Зарплата" [(ngModel)]="salary">
+    <input class="inputs" type="date" [(ngModel)]="date">
+    <input class="but" type="button" value="{{ isEditMode ? 'Сохранить' : 'Добавить' }}" (click)="isEditMode ? saveUser() : addUser()">
+</section>
+<section class="users">
+    <div class="user" *ngFor="let user of users">
+        <span>Имя: {{ user.name | capitalize }}</span>
+        <span>Зарплата: {{ user.salary | currency:'USD':true:'1.2-2' }}</span>
+        <span>Дата: {{ user.date | date:'mediumDate' }}</span>
+        <input class="but second" type="button" value="Удалить" (click)="removeUser(user)">
+        <input class="but second" type="button" value="Изменить" (click)="editUser(user)">
+    </div>
+</section>
