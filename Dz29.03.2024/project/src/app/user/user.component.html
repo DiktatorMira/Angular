@@ -1,0 +1,7 @@
+<section class="users">
+    <div class="user" *ngFor="let user of users">
+        <span>Имя: {{ user.name | capitalize }}</span>
+        <span>Зарплата: {{ user.salary | currency:'USD':true:'1.2-2' }}</span>
+        <span>Дата: {{ user.date | date:'mediumDate' }}</span>
+    </div>
+</section>
