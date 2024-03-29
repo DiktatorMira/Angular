@@ -9,9 +9,9 @@ export class SortComponent {
   auditoriums = [
     { name: 'Аудитория 1', seats: 15, faculty: 'Факультет 1' },
     { name: 'Аудитория 2', seats: 20, faculty: 'Факультет 2' },
-    { name: 'Аудитория 3', seats: 12, faculty: 'Факультет 1' },
-    { name: 'Аудитория 4', seats: 18, faculty: 'Факультет 3' },
-    { name: 'Аудитория 5', seats: 10, faculty: 'Факультет 2' }
+    { name: 'Судитория 3', seats: 12, faculty: 'Факультет 1' },
+    { name: 'Будитория 4', seats: 18, faculty: 'Факультет 3' },
+    { name: 'Дудитория 5', seats: 10, faculty: 'Факультет 2' }
   ];
   groups = [
     { name: 'Группа 1', students: 25, faculty: 'Факультет 1' },
@@ -29,18 +29,14 @@ export class SortComponent {
     this.displayedAuditoriums = this.auditoriums.filter(auditorium => auditorium.faculty === faculty);
   }
   displayAuditoriumsByGroup() {
-    const groupName = prompt('Введите название группы:');
-    const group = this.groups.find(group => group.name === groupName);
-    if (group) {
-      this.displayedAuditoriums = this.auditoriums.filter(auditorium => auditorium.faculty === group.faculty);
-    } else {
-      alert('Группа не найдена');
-    }
+    const groupName = prompt('Введите название группы:'), group = this.groups.find(group => group.name === groupName);
+    if (group) this.displayedAuditoriums = this.auditoriums.filter(auditorium => auditorium.faculty === group.faculty);
+    else alert('Группа не найдена');
   }
   sortAuditoriumsBySeats() {
-    this.displayedAuditoriums = this.auditoriums.slice().sort((a, b) => a.seats - b.seats);
+    this.displayedAuditoriums = this.displayedAuditoriums.slice().sort((a:any, b:any) => a.seats - b.seats);
   }
   sortAuditoriumsByName() {
-    this.displayedAuditoriums = this.auditoriums.slice().sort((a, b) => a.name.localeCompare(b.name));
+    this.displayedAuditoriums = this.displayedAuditoriums.slice().sort((a:any, b:any) => a.name.localeCompare(b.name));
   }
 }
