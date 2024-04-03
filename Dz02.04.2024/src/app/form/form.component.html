@@ -1,0 +1,34 @@
+<div class="container">
+    <form (ngSubmit)="submitForm(form)" #form="ngForm">
+        <div class="form-group" [ngClass]="{'has-error': email.invalid && email.touched}">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" #email="ngModel" ngModel name="email" email required><!-- #email="ngModel" для того, чтобы не делать переменную и NgModel='имяПеременной'-->
+            <p *ngIf="email.invalid && email.touched" class="ng-invalid-message">Введите корректный email!</p>
+        </div>
+        <div class="form-group">
+            <label for="pass">Password</label>
+            <input type="password" id="pass" class="form-control" ngModel name="pass" pattern="\w{4,10}" #pass = "ngModel" required>
+            <p *ngIf="pass.invalid && pass.touched" class="ng-invalid-message">Пароль должен содержать от 4 до 10 символов!</p>
+        </div>
+        <div class="form-group">
+            <label for="confirmPpass">Confirm Password</label>
+            <input type="password" id="confirmPpass" class="form-control" ngModel name="confirmPpass" appPasswordMatch="pass" required>
+            <p *ngIf="form.controls['confirmPpass'].errors?.['passwordMatch'] && form.controls['confirmPpass'].touched" class="ng-invalid-message">Пароли не совпадают!</p>
+        </div>
+        <div class="form-group">
+            <label for="">Language</label>
+            <select class="form-control" ngModel name="lang" required>
+                <option value="en">EN</option>
+                <option value="ua">UA</option>
+                <option value="fr">FR</option>
+                <option value="de">DE</option>
+            </select>
+        </div>
+        <div class="radio" *ngFor="let ans of answers">
+            <label for="">
+                <input type="radio" [value]="ans.type" ngModel name="answ" required>{{ans.text}}
+            </label>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Save</button>
+    </form>
+</div>
