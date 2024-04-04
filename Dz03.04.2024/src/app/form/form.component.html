@@ -1,0 +1,39 @@
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+        <div class="form-group" [ngClass]="{'has-error': form.get('email')?.invalid && form.get('email')?.touched}">
+            <input type="email" id="email" class="form-control custom-input" formControlName="email" placeholder="Email">
+            <p *ngIf="form.get('email')?.invalid && form.get('email')?.touched" class="ng-invalid-message">Введите корректный email!</p>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': form.get('fullName')?.invalid && form.get('fullName')?.touched}">
+            <input type="text" id="fullName" class="form-control custom-input" formControlName="fullName" placeholder="ФИО">
+            <p *ngIf="form.get('fullName')?.invalid && form.get('fullName')?.touched" class="ng-invalid-message" placeholder="ФИО">Поле ФИО не должно быть пустым!</p>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': form.get('phone')?.invalid && form.get('phone')?.touched}">
+            <input type="tel" id="phone" class="form-control custom-input" formControlName="phone" pattern="[0-9]{10}" placeholder="Номер телефона">
+            <p *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched" class="ng-invalid-message">Введите корректный номер телефона (10 цифр)!</p>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': form.get('pass')?.invalid && form.get('pass')?.touched}">
+            <input type="password" id="pass" class="form-control custom-input" formControlName="pass" placeholder="Пароль">
+            <p *ngIf="form.get('pass')?.invalid && form.get('pass')?.touched" class="ng-invalid-message">Пароль должен содержать от 4 до 10 символов!</p>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': form.hasError('passwordMatch')}">
+            <input type="password" id="confirmPass" class="form-control custom-input" formControlName="confirmPass" placeholder="Подтвердить пароль">
+            <p *ngIf="form.hasError('passwordMatch')" class="ng-invalid-message">Пароли не совпадают!</p>
+        </div>
+        <div class="form-group">
+            <label for="">Language</label>
+            <select class="form-control custom-input" formControlName="lang">
+                <option value="en">EN</option>
+                <option value="ua">UA</option>
+                <option value="fr">FR</option>
+                <option value="de">DE</option>
+            </select>
+        </div>
+        <div class="radio" *ngFor="let ans of answers">
+            <label>
+                <input type="radio" [value]="ans.type" formControlName="answ">{{ans.text}}
+            </label>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Save</button>
+    </form>
+</div>
