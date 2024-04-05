@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Поиск</h1>
+    <form (ngSubmit)="submit()">
+      <div class="form-group">
+          <input type="text" id="title" name="title" [(ngModel)]="title" class="form-control" placeholder="Название">
+      </div>
+        <div class="form-group">
+            <label for="type">Тип:</label>
+            <select name="type" id="type" [(ngModel)]="type" class="form-control">
+                <option value="movie">Фильм</option>
+                <option value="series">Серии</option>
+                <option value="episode">Эпизод</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Поиск</button>
+    </form>
+</div>
+<div class="film-container">
+    <div *ngFor="let film of films" class="film-data">
+        <h2 (click)="showDetails(film.imdbID)">{{ film.Title }} ({{ film.Year }})</h2>
+        <img src="{{ film.Poster }}" alt="Movie Poster">
+    </div>
+</div>
